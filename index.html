@@ -521,14 +521,6 @@
     </div>
   </div>
 
-  <!-- ═══ GSAP CDN INFO ═══ -->
-  <div id="cdn-info">
-  <div class="cdn-block">
-    <span class="cdn-label">⚙️ Voeg GSAP toe aan je project</span>
-    <p class="cdn-desc">Plaats de GSAP-bibliotheek via CDN binnen de <code>&lt;head&gt;</code> van je HTML-document:</p>
-    <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"&gt;&lt;/script&gt;</pre>
-  </div>
-  </div>
 
   <!-- ═══ LEVEL 1 ═══ -->
   <div class="assignment active" id="level-0">
@@ -538,6 +530,12 @@
 
     <div class="task-block" data-label="📝 Opdracht">
       <p>Maak een animatie waarbij een vierkant (<code>&lt;div&gt;</code>) naar rechts beweegt op de pagina.</p>
+    </div>
+
+    <div class="cdn-block">
+      <span class="cdn-label">⚙️ Voeg GSAP toe aan je project</span>
+      <p class="cdn-desc">Plaats de GSAP-bibliotheek via CDN binnen de <code>&lt;head&gt;</code> van je HTML-document:</p>
+      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"&gt;&lt;/script&gt;</pre>
     </div>
 
     <div class="code-grid">
@@ -593,6 +591,12 @@
       </ul>
     </div>
 
+    <div class="cdn-block">
+      <span class="cdn-label">⚙️ Voeg GSAP toe aan je project</span>
+      <p class="cdn-desc">Plaats de GSAP-bibliotheek via CDN binnen de <code>&lt;head&gt;</code> van je HTML-document:</p>
+      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"&gt;&lt;/script&gt;</pre>
+    </div>
+
     <div class="code-grid">
       <div class="code-card">
         <span class="code-card-label">💡 Hint</span>
@@ -642,6 +646,12 @@
         <li>Daarna gaat hij naar beneden</li>
       </ul>
       <p class="bonus">👉 Bonus: Laat hem ook van kleur veranderen</p>
+    </div>
+
+    <div class="cdn-block">
+      <span class="cdn-label">⚙️ Voeg GSAP toe aan je project</span>
+      <p class="cdn-desc">Plaats de GSAP-bibliotheek via CDN binnen de <code>&lt;head&gt;</code> van je HTML-document:</p>
+      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"&gt;&lt;/script&gt;</pre>
     </div>
 
     <div class="code-grid">
@@ -780,11 +790,10 @@ tl.to(".box", {
 
   function hideAll() {
     for (let i = 0; i < total; i++) {
-      document.getElementById('level-' + i)?.classList.remove('active');
+      document.getElementById('level-' + i).classList.remove('active');
     }
     document.getElementById('completion').classList.remove('active');
     document.getElementById('extra').classList.remove('active');
-    document.getElementById('cdn-info').style.display = 'none';
     onExtra = false;
   }
 
@@ -793,7 +802,6 @@ tl.to(".box", {
     current = idx;
     const el = document.getElementById('level-' + current);
     if (el) { void el.offsetWidth; el.classList.add('active'); }
-    document.getElementById('cdn-info').style.display = 'block';
     updateDots();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -815,7 +823,7 @@ tl.to(".box", {
       goTo(idx + 1);
     } else {
       hideAll();
-      done.forEach((_, i) => done[i] = true);
+      done.forEach(function(_, i) { done[i] = true; });
       const comp = document.getElementById('completion');
       void comp.offsetWidth;
       comp.classList.add('active');
@@ -826,7 +834,7 @@ tl.to(".box", {
 
   function updateDots() {
     const isCompletion = document.getElementById('completion').classList.contains('active');
-    document.querySelectorAll('.dot').forEach((dot, i) => {
+    document.querySelectorAll('.dot').forEach(function(dot, i) {
       dot.classList.remove('active', 'done');
       if (i < total && done[i]) dot.classList.add('done');
       if (i < total && i === current && !isCompletion && !onExtra) dot.classList.add('active');
@@ -839,6 +847,6 @@ tl.to(".box", {
     onExtra = false;
     goTo(0);
   }
-</script>-e 
+</script>
 </body>
 </html>
