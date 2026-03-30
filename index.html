@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GSAP Opdrachten</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --ink: #0d0d0d;
@@ -22,7 +22,7 @@
     body {
       background: var(--paper);
       color: var(--ink);
-      font-family: 'Space Mono', monospace;
+      font-family: 'Comfortaa', cursive;
       min-height: 100vh;
       padding: 0 0 80px;
       position: relative;
@@ -128,6 +128,130 @@
     .dot[data-level="0"].active { background: var(--green);  box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--green); }
     .dot[data-level="1"].active { background: var(--yellow); box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--yellow); }
     .dot[data-level="2"].active { background: var(--red);    box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--red); }
+
+    .dot[data-level="3"] { border-color: var(--ink); }
+    .dot[data-level="3"].done  { background: var(--ink); }
+    .dot[data-level="3"].active { background: var(--ink); box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--ink); }
+
+    /* ── Extra materials page ── */
+    #extra {
+      display: none;
+      animation: fadeUp 0.32s ease forwards;
+    }
+    #extra.active { display: block; }
+
+    .extra-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(26px, 4.5vw, 44px);
+      line-height: 1.08;
+      margin-bottom: 6px;
+    }
+    .extra-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .resource-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .resource-card {
+      border: 2px solid var(--rule);
+      padding: 22px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.18s, background 0.18s;
+      position: relative;
+    }
+    .resource-card:hover {
+      border-color: var(--green);
+      background: rgba(45,138,78,0.04);
+    }
+    .resource-card:hover .resource-arrow { transform: translateX(4px); }
+
+    .resource-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .resource-body { flex: 1; }
+
+    .resource-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .resource-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .resource-desc {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .resource-url {
+      font-size: 10px;
+      color: var(--green);
+      margin-top: 6px;
+      word-break: break-all;
+    }
+
+    .resource-arrow {
+      font-size: 18px;
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 4px;
+      transition: transform 0.18s;
+      align-self: center;
+    }
+
+    /* ── CDN block ── */
+    .cdn-block {
+      border: 2px solid var(--rule);
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .cdn-label {
+      position: absolute;
+      top: -10px; left: 14px;
+      background: var(--paper);
+      padding: 0 6px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .cdn-desc {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .cdn-desc code {
+      background: #e8e0d4;
+      padding: 1px 5px;
+      font-size: 11px;
+    }
 
     /* ── Assignment panel ── */
     .assignment {
@@ -289,7 +413,7 @@
     }
 
     .btn {
-      font-family: 'Space Mono', monospace;
+      font-family: 'Comfortaa', cursive;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -299,15 +423,15 @@
       background: transparent;
       color: var(--ink);
       cursor: pointer;
-      transition: background 0.15s, color 0.15s;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
     }
-    .btn:hover { background: var(--ink); color: var(--paper); }
+    .btn:hover { background: var(--green); border-color: var(--green); color: white; }
     .btn:disabled { opacity: 0.22; pointer-events: none; }
     .btn-primary { background: var(--ink); color: var(--paper); }
-    .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-primary:hover { background: var(--green); border-color: var(--green); color: white; }
     .btn-success { background: var(--green); border-color: var(--green); color: white; }
     .btn-success:hover { background: #1f6637; border-color: #1f6637; }
 
@@ -392,8 +516,18 @@
         <div class="dot active" data-level="0" onclick="goTo(0)" title="Niveau 1 – Basis"></div>
         <div class="dot" data-level="1" onclick="goTo(1)" title="Niveau 2 – Gemiddeld"></div>
         <div class="dot" data-level="2" onclick="goTo(2)" title="Niveau 3 – Uitdaging"></div>
+        <div class="dot" data-level="3" onclick="goExtra()" title="Extra studiemateriaal"></div>
       </div>
     </div>
+  </div>
+
+  <!-- ═══ GSAP CDN INFO ═══ -->
+  <div id="cdn-info">
+  <div class="cdn-block">
+    <span class="cdn-label">⚙️ Voeg GSAP toe aan je project</span>
+    <p class="cdn-desc">Plaats de GSAP-bibliotheek via CDN binnen de <code>&lt;head&gt;</code> van je HTML-document:</p>
+    <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"&gt;&lt;/script&gt;</pre>
+  </div>
   </div>
 
   <!-- ═══ LEVEL 1 ═══ -->
@@ -580,7 +714,60 @@ tl.to(".box", {
       <li>Timelines gebruiken voor sequencing</li>
     </ul>
     <br>
-    <button class="btn" onclick="restart()">↩ Opnieuw beginnen</button>
+    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:16px;">
+      <button class="btn btn-success" onclick="goExtra()">📚 Extra studiemateriaal →</button>
+      <button class="btn" onclick="restart()">↩ Opnieuw beginnen</button>
+    </div>
+  </div>
+
+  <!-- ═══ EXTRA STUDIEMATERIAAL ═══ -->
+  <div id="extra">
+    <div class="level-badge" style="color:var(--ink); border-color:var(--ink);">📚 Bonus — Extra studiemateriaal</div>
+    <h2 class="extra-title">Verder leren<br>met GSAP</h2>
+    <p class="extra-sub">Ben je al klaar met de opdrachten? Verdiep je kennis met deze bronnen.</p>
+
+    <div class="resource-cards">
+
+      <a class="resource-card" href="https://gsap.com/resources/" target="_blank" rel="noopener">
+        <div class="resource-icon">🌐</div>
+        <div class="resource-body">
+          <div class="resource-label">Officiële documentatie</div>
+          <div class="resource-name">GSAP Resources</div>
+          <div class="resource-desc">De officiële bronnenbibliotheek van GreenSock. Tutorials, guides en alles wat je nodig hebt om GSAP te beheersen.</div>
+          <div class="resource-url">gsap.com/resources/</div>
+        </div>
+        <div class="resource-arrow">→</div>
+      </a>
+
+      <a class="resource-card" href="https://www.youtube.com/@GreenSockLearning/videos" target="_blank" rel="noopener">
+        <div class="resource-icon">▶️</div>
+        <div class="resource-body">
+          <div class="resource-label">Video tutorials</div>
+          <div class="resource-name">GreenSock YouTube</div>
+          <div class="resource-desc">Officieel YouTube-kanaal van GreenSock met videolessen over animaties, timelines en geavanceerde GSAP-technieken.</div>
+          <div class="resource-url">youtube.com/@GreenSockLearning</div>
+        </div>
+        <div class="resource-arrow">→</div>
+      </a>
+
+      <a class="resource-card" href="https://gsap.com/cheatsheet" target="_blank" rel="noopener">
+        <div class="resource-icon">📋</div>
+        <div class="resource-body">
+          <div class="resource-label">Snelreferentie</div>
+          <div class="resource-name">GSAP Cheatsheet</div>
+          <div class="resource-desc">Een handig overzicht van alle GSAP-methodes, properties en easing-opties op één pagina. Bewaar als bookmark!</div>
+          <div class="resource-url">gsap.com/cheatsheet</div>
+        </div>
+        <div class="resource-arrow">→</div>
+      </a>
+
+    </div>
+
+    <div class="nav">
+      <button class="btn" onclick="goTo(2)">← Terug naar opdrachten</button>
+      <div class="nav-info">Veel succes! 🚀</div>
+      <button class="btn" onclick="restart()">↩ Opnieuw beginnen</button>
+    </div>
   </div>
 
 </div>
@@ -589,13 +776,34 @@ tl.to(".box", {
   let current = 0;
   const total = 3;
   const done = [false, false, false];
+  let onExtra = false;
+
+  function hideAll() {
+    for (let i = 0; i < total; i++) {
+      document.getElementById('level-' + i)?.classList.remove('active');
+    }
+    document.getElementById('completion').classList.remove('active');
+    document.getElementById('extra').classList.remove('active');
+    document.getElementById('cdn-info').style.display = 'none';
+    onExtra = false;
+  }
 
   function goTo(idx) {
-    document.getElementById('level-' + current)?.classList.remove('active');
-    document.getElementById('completion').classList.remove('active');
+    hideAll();
     current = idx;
     const el = document.getElementById('level-' + current);
-    if (el) { el.classList.remove('active'); void el.offsetWidth; el.classList.add('active'); }
+    if (el) { void el.offsetWidth; el.classList.add('active'); }
+    document.getElementById('cdn-info').style.display = 'block';
+    updateDots();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function goExtra() {
+    hideAll();
+    onExtra = true;
+    const el = document.getElementById('extra');
+    void el.offsetWidth;
+    el.classList.add('active');
     updateDots();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -606,31 +814,31 @@ tl.to(".box", {
     if (idx < total - 1) {
       goTo(idx + 1);
     } else {
-      document.getElementById('level-' + idx).classList.remove('active');
+      hideAll();
+      done.forEach((_, i) => done[i] = true);
       const comp = document.getElementById('completion');
-      comp.classList.remove('active');
       void comp.offsetWidth;
       comp.classList.add('active');
-      done.forEach((_, i) => done[i] = true);
       updateDots();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 
   function updateDots() {
-    const isComplete = document.getElementById('completion').classList.contains('active');
+    const isCompletion = document.getElementById('completion').classList.contains('active');
     document.querySelectorAll('.dot').forEach((dot, i) => {
       dot.classList.remove('active', 'done');
-      if (done[i]) dot.classList.add('done');
-      if (i === current && !isComplete) dot.classList.add('active');
+      if (i < total && done[i]) dot.classList.add('done');
+      if (i < total && i === current && !isCompletion && !onExtra) dot.classList.add('active');
+      if (i === 3 && onExtra) dot.classList.add('active');
     });
   }
 
   function restart() {
     done.fill(false);
-    document.getElementById('completion').classList.remove('active');
+    onExtra = false;
     goTo(0);
   }
-</script>
+</script>-e 
 </body>
 </html>
