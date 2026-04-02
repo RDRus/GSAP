@@ -253,6 +253,56 @@
       font-size: 11px;
     }
 
+    /* ── Project structure block ── */
+    .project-block {
+      border: 2px solid var(--rule);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .project-label {
+      position: absolute;
+      top: -10px; left: 14px;
+      background: var(--paper);
+      padding: 0 6px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .project-desc {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 12px;
+    }
+    .project-files {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .file-pill {
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 11px;
+      padding: 4px 12px;
+      font-family: 'Space Mono', monospace;
+    }
+    .project-note {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #444;
+      margin-top: 10px;
+    }
+    .project-note code {
+      background: #e8e0d4;
+      padding: 1px 5px;
+      font-size: 11px;
+      font-family: 'Space Mono', monospace;
+    }
+
     /* ── Assignment panel ── */
     .assignment {
       display: none;
@@ -535,7 +585,22 @@
     <div class="cdn-block">
       <span class="cdn-label">⚙️ Voeg GSAP toe aan je project</span>
       <p class="cdn-desc">Plaats de GSAP-bibliotheek via CDN binnen de <code>&lt;head&gt;</code> van je HTML-document:</p>
-      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"&gt;&lt;/script&gt;</pre>
+      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c1a6b2a0b181f2eff0f5eff3">[email&#160;protected]</a>/dist/gsap.min.js" defer&gt;&lt;/script&gt;</pre>
+    </div>
+
+    <div class="project-block">
+      <span class="project-label">📁 Projectstructuur</span>
+      <p class="project-desc">Maak drie bestanden aan in je projectmap:</p>
+      <div class="project-files">
+        <span class="file-pill">index.html</span>
+        <span class="file-pill">style.css</span>
+        <span class="file-pill">script.js</span>
+      </div>
+      <p class="project-note">Koppel je CSS en JS aan je HTML via de <code>&lt;head&gt;</code>. Gebruik <code>defer</code> zodat de pagina eerst volledig laadt vóór het script wordt uitgevoerd:</p>
+      <pre class="code">&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="345347554474071a05001a06">[email&#160;protected]</a>/dist/gsap.min.js" defer&gt;&lt;/script&gt;
+&lt;script src="script.js" defer&gt;&lt;/script&gt;</pre>
+      <p class="project-note">Zet je GSAP-animatiecode in <code>script.js</code>. De GSAP-bibliotheek moet altijd vóór <code>script.js</code> worden geladen.</p>
     </div>
 
     <div class="code-grid">
@@ -594,7 +659,22 @@
     <div class="cdn-block">
       <span class="cdn-label">⚙️ Voeg GSAP toe aan je project</span>
       <p class="cdn-desc">Plaats de GSAP-bibliotheek via CDN binnen de <code>&lt;head&gt;</code> van je HTML-document:</p>
-      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"&gt;&lt;/script&gt;</pre>
+      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="630410021323504d52574d51">[email&#160;protected]</a>/dist/gsap.min.js" defer&gt;&lt;/script&gt;</pre>
+    </div>
+
+    <div class="project-block">
+      <span class="project-label">📁 Projectstructuur</span>
+      <p class="project-desc">Maak drie bestanden aan in je projectmap:</p>
+      <div class="project-files">
+        <span class="file-pill">index.html</span>
+        <span class="file-pill">style.css</span>
+        <span class="file-pill">script.js</span>
+      </div>
+      <p class="project-note">Koppel je CSS en JS aan je HTML via de <code>&lt;head&gt;</code>. Gebruik <code>defer</code> zodat de pagina eerst volledig laadt vóór het script wordt uitgevoerd:</p>
+      <pre class="code">&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="452236243505766b74716b77">[email&#160;protected]</a>/dist/gsap.min.js" defer&gt;&lt;/script&gt;
+&lt;script src="script.js" defer&gt;&lt;/script&gt;</pre>
+      <p class="project-note">Zet je GSAP-animatiecode in <code>script.js</code>. De GSAP-bibliotheek moet altijd vóór <code>script.js</code> worden geladen.</p>
     </div>
 
     <div class="code-grid">
@@ -651,7 +731,22 @@
     <div class="cdn-block">
       <span class="cdn-label">⚙️ Voeg GSAP toe aan je project</span>
       <p class="cdn-desc">Plaats de GSAP-bibliotheek via CDN binnen de <code>&lt;head&gt;</code> van je HTML-document:</p>
-      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"&gt;&lt;/script&gt;</pre>
+      <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7c0d4c6d7e7948996938995">[email&#160;protected]</a>/dist/gsap.min.js" defer&gt;&lt;/script&gt;</pre>
+    </div>
+
+    <div class="project-block">
+      <span class="project-label">📁 Projectstructuur</span>
+      <p class="project-desc">Maak drie bestanden aan in je projectmap:</p>
+      <div class="project-files">
+        <span class="file-pill">index.html</span>
+        <span class="file-pill">style.css</span>
+        <span class="file-pill">script.js</span>
+      </div>
+      <p class="project-note">Koppel je CSS en JS aan je HTML via de <code>&lt;head&gt;</code>. Gebruik <code>defer</code> zodat de pagina eerst volledig laadt vóór het script wordt uitgevoerd:</p>
+      <pre class="code">&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e697d6f7e4e3d203f3a203c">[email&#160;protected]</a>/dist/gsap.min.js" defer&gt;&lt;/script&gt;
+&lt;script src="script.js" defer&gt;&lt;/script&gt;</pre>
+      <p class="project-note">Zet je GSAP-animatiecode in <code>script.js</code>. De GSAP-bibliotheek moet altijd vóór <code>script.js</code> worden geladen.</p>
     </div>
 
     <div class="code-grid">
@@ -783,14 +878,15 @@ tl.to(".box", {
 </div>
 
 <script>
-  let current = 0;
-  const total = 3;
-  const done = [false, false, false];
-  let onExtra = false;
+  var current = 0;
+  var total = 3;
+  var done = [false, false, false];
+  var onExtra = false;
 
   function hideAll() {
-    for (let i = 0; i < total; i++) {
-      document.getElementById('level-' + i).classList.remove('active');
+    for (var i = 0; i < total; i++) {
+      var lvl = document.getElementById('level-' + i);
+      if (lvl) lvl.classList.remove('active');
     }
     document.getElementById('completion').classList.remove('active');
     document.getElementById('extra').classList.remove('active');
@@ -800,7 +896,7 @@ tl.to(".box", {
   function goTo(idx) {
     hideAll();
     current = idx;
-    const el = document.getElementById('level-' + current);
+    var el = document.getElementById('level-' + current);
     if (el) { void el.offsetWidth; el.classList.add('active'); }
     updateDots();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -809,7 +905,7 @@ tl.to(".box", {
   function goExtra() {
     hideAll();
     onExtra = true;
-    const el = document.getElementById('extra');
+    var el = document.getElementById('extra');
     void el.offsetWidth;
     el.classList.add('active');
     updateDots();
@@ -823,8 +919,8 @@ tl.to(".box", {
       goTo(idx + 1);
     } else {
       hideAll();
-      done.forEach(function(_, i) { done[i] = true; });
-      const comp = document.getElementById('completion');
+      for (var i = 0; i < total; i++) { done[i] = true; }
+      var comp = document.getElementById('completion');
       void comp.offsetWidth;
       comp.classList.add('active');
       updateDots();
@@ -833,17 +929,18 @@ tl.to(".box", {
   }
 
   function updateDots() {
-    const isCompletion = document.getElementById('completion').classList.contains('active');
-    document.querySelectorAll('.dot').forEach(function(dot, i) {
-      dot.classList.remove('active', 'done');
-      if (i < total && done[i]) dot.classList.add('done');
-      if (i < total && i === current && !isCompletion && !onExtra) dot.classList.add('active');
-      if (i === 3 && onExtra) dot.classList.add('active');
-    });
+    var isCompletion = document.getElementById('completion').classList.contains('active');
+    var dots = document.querySelectorAll('.dot');
+    for (var i = 0; i < dots.length; i++) {
+      dots[i].classList.remove('active', 'done');
+      if (i < total && done[i]) dots[i].classList.add('done');
+      if (i < total && i === current && !isCompletion && !onExtra) dots[i].classList.add('active');
+      if (i === 3 && onExtra) dots[i].classList.add('active');
+    }
   }
 
   function restart() {
-    done.fill(false);
+    for (var i = 0; i < total; i++) { done[i] = false; }
     onExtra = false;
     goTo(0);
   }
